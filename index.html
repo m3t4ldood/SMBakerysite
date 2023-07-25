@@ -4,7 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bakery Menu</title>
-  <link rel="stylesheet" href="styles.css">
+  <styles>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  width: 300px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#menu {
+  margin-top: 20px;
+}
+</styles>
 </head>
 <body>
   <div class="container">
@@ -12,7 +39,33 @@
     <h1>Welcome to Our Bakery</h1>
     <div id="menu"></div>
   </div>
-  <script src="script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+  const menuContainer = document.getElementById('menu');
+
+  // Fetch menu data from the text file using AJAX (Fetch API)
+  fetch('menu.txt')
+    .then(response => response.text())
+    .then(data => {
+      // Process the data and create menu items
+      const menuItems = data.split('\n');
+      let menuHTML = '<ul>';
+      menuItems.forEach(item => {
+        const [itemName, itemPrice] = item.split(', ');
+        menuHTML += `<li>${itemName} - $${itemPrice}</li>`;
+      });
+      menuHTML += '</ul>';
+
+      // Display the menu on the web page
+      menuContainer.innerHTML = menuHTML;
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      menuContainer.innerHTML = '<p>Failed to load menu data.</p>';
+    });
+});
+
+  </script>
 </body>
   <footer>Sweet Marilyn Bakery 2023©</footer>
 </html>

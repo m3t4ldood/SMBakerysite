@@ -1,97 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title><HTML & SMIL>👋______{^_^}____👍</title>
-  <meta
-	name="viewport" 
-	content=
-	 "width=device-width, 
-	 initial-scale=1.0"/>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bakery Menu</title>
-  body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f7f7f7;
-    }
-
-    .container {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      width: 300px;
-    }
-
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    input {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
-    button {
-      background-color: #007BFF;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background-color: #0056b3;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Catastrophic Cookies</title>
 </head>
 <body>
-  <div class="container">
-    <img src="https://i.postimg.cc/RZryFH5t/catpic.jpg">
-    <h1>Welcome to Our Bakery</h1>
-    <div id="menu"></div>
-  </div>
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-  const menuContainer = document.getElementById('menu');
+    <header>
+        <h1>🙀Catastrophic😹 🍪Cookies🍪</h1>
+        <h2>🍥 Better than crumbl 🍥</h2>
+    </header>
 
-  // Fetch menu data from the text file using AJAX (Fetch API)
-  fetch('menu.txt')
-    .then(response => response.text())
-    .then(data => {
-      // Process the data and create menu items
-      const menuItems = data.split('\n');
-      let menuHTML = '<ul>';
-      menuItems.forEach(item => {
-        const [itemName, itemPrice] = item.split(', ');
-        menuHTML += `<li>${itemName} - $${itemPrice}</li>`;
-      });
-      menuHTML += '</ul>';
+    <section class="menu">
+        <article class="cookie-item">
+            <h2>CLASSIC PINK SUGAR</h2>
+            <p>A soft buttery cookie topped with a perfect pink swoop of almond-scented frosting</p>
+            <p>Price: $3.50</p>
+        </article>
+        <article class="cookie-item">
+            <h2>TEDDY GRAHAMS HONEY CAKE</h2>
+            <p>A soft honey graham-flavored cookie topped with honey butter frosting, drizzled honey, and Teddy Grahams (Ask for spicy honey!)</p>
+            <p>Price: $3.50</p>
+        </article>
+        <article class="cookie-item">
+            <h2>BUCKEYE BROWNIE</h2>
+            <p>A soft & chewy chocolate brownie cookie topped with sweet peanut butter and semi-sweet chocolate</p>
+            <p>Price: $3.50</p>
+        </article>
+        <article class="cookie-item">
+            <h2>BLUEBERRY CHEESECAKE</h2>
+            <p>A soft graham cracker cookie topped with tangy Lemon cheesecake swirl and blueberry compote</p>
+            <p>Price: $3.50</p>
+        </article>
+        <article class="cookie-item">
+            <h2>RASPBERRY CHEESECAKE</h2>
+            <p>A soft graham cracker cookie topped with tangy vanilla cheesecake swirl and raspberry coulis drizzle</p>
+            <p>Price: $3.50</p>
+        </article>
+        <article class="cookie-item">
+            <h2>OREO COOKIE</h2>
+            <p>A soft deep dark cocoa cookie topped with vanilla cream cheese frosting and Oreo crumbs</p>
+            <p>Price: $4.00</p>
+        </article>
+    </section>
 
-      // Display the menu on the web page
-      menuContainer.innerHTML = menuHTML;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-      menuContainer.innerHTML = '<p>Failed to load menu data.</p>';
-    });
-});
+    <section class="discount">
+        <p>Buy 3 or more cookies for a discount of $0.50 off each!</p>
+    </section>
 
-  </script>
+    <section class="pickup-info">
+        <p>COOKIES WILL BE READY on FRIDAY 5:00pm</p>
+        <p>Pick-up @ </p>
+        <p>Contact: --</p>
+        <p>We accept Zelle, Apple Pay, and Cash</p>
+    </section>
+
+    <footer>
+        <p>*Please arrange for a different time/date if needed</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-  <footer>Sweet Marilyn Bakery 2023©</footer>
 </html>
